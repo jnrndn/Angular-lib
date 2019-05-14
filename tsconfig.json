@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@poc/lib-core": [
+        "dist/poc/lib-core"
+      ],
+      "@poc/lib-core/*": [
+        "dist/poc/lib-core/*"
+      ]
+    }
   }
 }

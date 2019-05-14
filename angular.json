@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "@poc/lib-core": {
+      "root": "projects/poc/lib-core",
+      "sourceRoot": "projects/poc/lib-core/src",
+      "projectType": "library",
+      "prefix": "lc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/poc/lib-core/tsconfig.lib.json",
+            "project": "projects/poc/lib-core/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/poc/lib-core/src/test.ts",
+            "tsConfig": "projects/poc/lib-core/tsconfig.spec.json",
+            "karmaConfig": "projects/poc/lib-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/poc/lib-core/tsconfig.lib.json",
+              "projects/poc/lib-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "library-poc"
